@@ -29,6 +29,9 @@ def index(request):
     popular_posts = all_posts.annotate(likes_count=Count('likes')).order_by('-likes_count')[:3]
     fresh_posts = all_posts.order_by('-published_at')[:5]
 
+    for post in popular_posts:
+        print(post.image.url)
+
     context = {
         'most_popular_posts': [serialize_post(post) for post in popular_posts],
         'fresh_posts': [serialize_post(post) for post in fresh_posts],
