@@ -5,7 +5,9 @@
 <title>{{post.title}}-Blog Details</title>
 {% endblock %}
 {% block content %}
+
     <!--================ Hero sm Banner start =================-->      
+
     <section class="mb-30px">
       <div class="container">
         <div class="hero-banner hero-banner--sm">
@@ -21,19 +23,21 @@
         </div>
       </div>
     </section>
+
     <!--================ Hero sm Banner end =================-->    
     
 
     <!--================ Start Blog Post Area =================-->
+
     <section class="blog-post-area section-margin">
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
             <div class="main_blog_details">
               {% if post.image_url %}
-              <img class="img-fluid" src={{post.image_url}} alt="">
+              <img class="img-fluid" src={{post.image_url}} alt="Картинка Поста">
               {% else %}
-              <img class="img-fluid" src={% static 'img/banner/blog.png' %} alt="">
+              <img class="img-fluid" src={% static 'img/banner/blog.png' %} alt="Картинка Поста">
               {% endif %}
               <h4>{{post.title}}</h4>
               <div class="user_details">
@@ -70,18 +74,19 @@
                       <h5><a href="#">{{comment.author}}</a></h5>
                       <p class="date">{{comment.published_at}} </p>
                       <p class="comment">
-                          {{comment.text}}
+                        {{comment.text}}
                       </p>
                     </div>
                   </div>
                   <div class="reply-btn">
-                          <a href="" class="btn-reply text-uppercase">reply</a> 
+                    <a href="" class="btn-reply text-uppercase">reply</a> 
                   </div>
                 </div>
               </div>
               {%endfor%}
 
           <!-- Start Blog Post Siddebar -->
+
           <div class="col-lg-4 sidebar-widgets">
             <div class="widget-wrap">
               <div class="single-sidebar-widget newsletter-widget">
@@ -101,10 +106,14 @@
               </div>
             </div>
           </div>
+
           <!-- End Blog Post Siddebar -->
+           
         </div>
       </div>
     </section>
+
     <!--================ End Blog Post Area =================-->
+
 </html>
 {% endblock %}
